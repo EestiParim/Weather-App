@@ -19,46 +19,63 @@
             android:id="@+id/Date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Tallinn"
+            android:text="Saturday"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/cityTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Seventeen Degrees"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Date" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Saturday" />
 
         <TextView
             android:id="@+id/cityClouds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="30dp"
             android:text="Suured Pilved"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.PopupMenu.Header"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/weatherDescIcon"
-            android:layout_width="52dp"
-            android:layout_height="100px"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:adjustViewBounds="true"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cityClouds"
+            app:layout_constraintStart_toStartOf="@+id/cityClouds"
             app:layout_constraintTop_toBottomOf="@+id/cityClouds"
             app:srcCompat="@drawable/weather_icons" />
+
+        <TextView
+            android:id="@+id/high_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="37dp"
+            android:layout_marginTop="8dp"
+            android:text="18°"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/weatherDescIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="11°"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

@@ -70,7 +70,7 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Vi
 
         ViewHolder(View itemView) {
             super(itemView);
-            cityName = itemView.findViewById(R.id.cityName);
+            cityName = itemView.findViewById(R.id.Date);
             cityTemp = itemView.findViewById(R.id.cityTemp);
             cityClouds = itemView.findViewById(R.id.cityClouds);
             weatherIcon = itemView.findViewById(R.id.weatherDescIcon);
