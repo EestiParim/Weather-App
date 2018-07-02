@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.weather.tonis.weatherapp.DetailedInfoActivity;
 import com.weather.tonis.weatherapp.R;
-import com.weather.tonis.weatherapp.listItems.CityData;
+import com.weather.tonis.weatherapp.listObjects.CityData;
 
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +45,7 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Vi
         final CityData cityData = cityList.get(position);
         String weatherIcon = cityData.getWeatherIcon();
         holder.cityName.setText(cityData.getCityName());
-        holder.cityTemp.setText(cityData.getCityTemp() + " " + context.getString(R.string.degrees));
+        holder.cityTemp.setText(cityData.getCityTempAsString() + " " + context.getString(R.string.degrees));
         holder.cityClouds.setText(cityData.getWeatherDescription());
         if (weatherIconMap.containsKey(weatherIcon)){
             holder.weatherIcon.setImageLevel(weatherIconMap.get(cityData.getWeatherIcon()));
@@ -70,7 +70,7 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Vi
 
         ViewHolder(View itemView) {
             super(itemView);
-            cityName = itemView.findViewById(R.id.Date);
+            cityName = itemView.findViewById(R.id.date);
             cityTemp = itemView.findViewById(R.id.cityTemp);
             cityClouds = itemView.findViewById(R.id.cityClouds);
             weatherIcon = itemView.findViewById(R.id.weatherDescIcon);

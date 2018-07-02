@@ -1,21 +1,16 @@
 package com.weather.tonis.weatherapp;
 
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Cache;
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.weather.tonis.weatherapp.RecycleAdapters.CitiesListAdapter;
-import com.weather.tonis.weatherapp.listItems.CityData;
+import com.weather.tonis.weatherapp.listObjects.CityData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +18,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 

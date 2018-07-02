@@ -1,4 +1,4 @@
-package com.weather.tonis.weatherapp.listItems;
+package com.weather.tonis.weatherapp.listObjects;
 
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
@@ -69,9 +69,8 @@ public class CityData {
         return dt;
     }
 
-    public String getCityTemp() {
+    public String getCityTempAsString() {
         ValueConverters converter = ValueConverters.ENGLISH_INTEGER;
-        //return tempDisplayFormat.format(cityTemp);
         return StringUtils.capitalize(converter.asWords((int) cityTemp));
     }
 
