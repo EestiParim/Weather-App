@@ -1,10 +1,10 @@
 package com.weather.tonis.weatherapp.RecycleAdapters;
 
 import android.annotation.SuppressLint;
-import android.app.LauncherActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.weather.tonis.weatherapp.MainActivity;
+import com.weather.tonis.weatherapp.DetailedInfoActivity;
 import com.weather.tonis.weatherapp.R;
 import com.weather.tonis.weatherapp.listItems.CityData;
 
@@ -50,6 +50,10 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Vi
         if (weatherIconMap.containsKey(weatherIcon)){
             holder.weatherIcon.setImageLevel(weatherIconMap.get(cityData.getWeatherIcon()));
         }
+        holder.cardView.setOnClickListener(v -> {
+            Intent mIntent = new Intent(context, DetailedInfoActivity.class);
+            context.startActivity(mIntent);
+        });
     }
 
     @Override
@@ -62,6 +66,7 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Vi
         final TextView cityTemp;
         final TextView cityClouds;
         final ImageView weatherIcon;
+        final CardView cardView;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -69,6 +74,7 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Vi
             cityTemp = itemView.findViewById(R.id.cityTemp);
             cityClouds = itemView.findViewById(R.id.cityClouds);
             weatherIcon = itemView.findViewById(R.id.weatherDescIcon);
+            cardView = itemView.findViewById(R.id.cardView);
         }
     }
 }

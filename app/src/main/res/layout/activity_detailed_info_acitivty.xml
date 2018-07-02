@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailedInfoActivity">
+
+
+
+    <ImageView
+        android:id="@+id/background_image_b"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/background_darker"
+        android:scaleType = "centerCrop" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/ToolBarStyle.Event"
+        app:theme="@style/Widget.AppCompat.ActionBar"/>
+
+    <TextView
+        android:id="@+id/current_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="current_temp"
+        android:text="14°"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/background_image_b"
+        app:layout_constraintTop_toBottomOf="@+id/weather_icon"
+        tools:text="14°" />
+
+    <ImageView
+        android:id="@+id/weather_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/background_image_b"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/ic_weather_fog_white_48dp" />
+
+    <TextView
+        android:id="@+id/weather_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Drifting snow"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/weather_icon"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:text="Drifting snow" />
+
+    <ImageView
+        android:id="@+id/low_temp_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toEndOf="@+id/max_temp"
+        app:layout_constraintTop_toBottomOf="@+id/weather_icon"
+        app:srcCompat="@drawable/ic_format_vertical_align_bottom_white_24dp" />
+
+    <ImageView
+        android:id="@+id/max_temp_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toStartOf="@+id/background_image_b"
+        app:layout_constraintTop_toBottomOf="@+id/weather_icon"
+        app:srcCompat="@drawable/ic_format_vertical_align_top_white_24dp" />
+
+    <TextView
+        android:id="@+id/max_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="28°"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/max_temp_icon"
+        app:layout_constraintTop_toBottomOf="@+id/weather_icon"
+        tools:text="14°" />
+
+    <TextView
+        android:id="@+id/low_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="8°"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/low_temp_icon"
+        app:layout_constraintTop_toBottomOf="@+id/weather_icon"
+        tools:text="14°" />
+
+</android.support.constraint.ConstraintLayout>
