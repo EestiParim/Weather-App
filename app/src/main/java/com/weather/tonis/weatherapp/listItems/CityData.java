@@ -1,7 +1,5 @@
 package com.weather.tonis.weatherapp.listItems;
 
-import com.weather.tonis.weatherapp.numbersToWords.EnglishNumbersToWords;
-
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,6 +22,7 @@ public class CityData {
     DecimalFormat tempDisplayFormat = new DecimalFormat("#.#");
     private String skyDesc;
     private String weatherDescription;
+    private String weatherIcon;
 
     public CityData(int id, int dt, String cityName, JSONObject coord, JSONObject tempData, JSONObject windData, JSONObject clouds, JSONArray weather) throws JSONException {
         this.id = id;
@@ -80,8 +79,13 @@ public class CityData {
         return weatherDescription;
     }
 
+    public String getWeatherIcon() {
+        return weatherIcon;
+    }
+
     public void getWeatherDescription(JSONArray weather) throws JSONException {
         JSONObject jsonObject = weather.getJSONObject(0);
         this.weatherDescription = jsonObject.getString("description");
+        this.weatherIcon = jsonObject.getString("icon");
     }
 }

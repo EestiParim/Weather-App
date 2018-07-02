@@ -1,27 +1,34 @@
 package com.weather.tonis.weatherapp.RecycleAdapters;
 
+import android.annotation.SuppressLint;
 import android.app.LauncherActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.weather.tonis.weatherapp.MainActivity;
 import com.weather.tonis.weatherapp.R;
 import com.weather.tonis.weatherapp.listItems.CityData;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.ViewHolder> {
     private final List<CityData> cityList;
     private final Context context;
+    HashMap<String, Integer> weatherIconMap = new HashMap<String, Integer>();
 
     public CitiesListAdapter(List<CityData> cityList, Context context) {
         this.cityList = cityList;
         this.context = context;
+        weatherIconMap.put("02d", 1);
+        weatherIconMap.put("04d", 2);
     }
 
     @NonNull
@@ -32,12 +39,17 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Vi
         return new ViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final CityData cityData = cityList.get(position);
+        String weatherIcon = cityData.getWeatherIcon();
         holder.cityName.setText(cityData.getCityName());
         holder.cityTemp.setText(cityData.getCityTemp() + " " + context.getString(R.string.degrees));
         holder.cityClouds.setText(cityData.getWeatherDescription());
+        if (weatherIconMap.containsKey(weatherIcon)){
+            holder.weatherIcon.setImageLevel(weatherIconMap.get(cityData.getWeatherIcon()));
+        }
     }
 
     @Override
@@ -49,12 +61,14 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Vi
         final TextView cityName;
         final TextView cityTemp;
         final TextView cityClouds;
+        final ImageView weatherIcon;
 
         ViewHolder(View itemView) {
             super(itemView);
             cityName = itemView.findViewById(R.id.cityName);
             cityTemp = itemView.findViewById(R.id.cityTemp);
             cityClouds = itemView.findViewById(R.id.cityClouds);
+            weatherIcon = itemView.findViewById(R.id.weatherDescIcon);
         }
     }
 }

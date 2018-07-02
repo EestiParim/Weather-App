@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">weather app</string>
     <string name="degrees">Degrees</string>
+    <string name="background_image">background image</string>
 </resources>
