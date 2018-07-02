@@ -5,11 +5,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
 import pl.allegro.finance.tradukisto.ValueConverters;
 
-public class CityData {
+public class CityData implements Serializable {
     private final String cityName;
     private final JSONObject coord;
     private final JSONObject tempData;
@@ -61,17 +62,26 @@ public class CityData {
         return weather;
     }
 
-    public int getId() {
-        return id;
+    public String getId() {
+        return Integer.toString(id);
     }
 
     public int getDt() {
         return dt;
     }
 
-    public String getCityTempAsString() {
+    public String getCityTempAsStringWord() {
         ValueConverters converter = ValueConverters.ENGLISH_INTEGER;
         return StringUtils.capitalize(converter.asWords((int) cityTemp));
+    }
+    public String getMaxTempAsString() throws JSONException {
+        return String.valueOf((int) tempData.getDouble("temp_max"));
+    }
+    public String getMinTempAsString() throws JSONException {
+        return String.valueOf((int) tempData.getDouble("temp_min"));
+    }
+    public String getCityTempAsString(){
+        return String.valueOf((int) cityTemp);
     }
 
     public String getWeatherDescription() {

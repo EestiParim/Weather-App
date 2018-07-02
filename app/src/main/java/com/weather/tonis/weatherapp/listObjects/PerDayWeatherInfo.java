@@ -30,7 +30,7 @@ public class PerDayWeatherInfo {
 
     }
 
-    public String getDateTime() throws ParseException {
+    public String getDateTime() {
         String[] dayList;
         dayList = new String[]{"Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday", "Sunday"};
         Date date = new Date(dateTime * 1000);

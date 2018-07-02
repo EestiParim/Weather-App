@@ -27,7 +27,7 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/nestedConstraint"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -51,8 +51,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@+id/nestedConstraint"
-                app:layout_constraintTop_toBottomOf="@+id/max_temp_icon"
-                tools:text="14°" />
+                app:layout_constraintTop_toBottomOf="@+id/max_temp_icon"/>
 
             <ImageView
                 android:id="@+id/weather_icon"
@@ -74,17 +73,16 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toEndOf="@+id/weather_icon"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                tools:text="Drifting snow" />
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
             <ImageView
                 android:id="@+id/low_temp_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/max_temp"
-                app:layout_constraintStart_toEndOf="@+id/max_temp"
-                app:layout_constraintTop_toTopOf="@+id/max_temp"
+                app:layout_constraintBottom_toBottomOf="@+id/high_temp"
+                app:layout_constraintStart_toEndOf="@+id/high_temp"
+                app:layout_constraintTop_toTopOf="@+id/high_temp"
                 app:srcCompat="@drawable/ic_format_vertical_align_bottom_white_24dp" />
 
             <ImageView
@@ -98,7 +96,7 @@
                 app:srcCompat="@drawable/ic_format_vertical_align_top_white_24dp" />
 
             <TextView
-                android:id="@+id/max_temp"
+                android:id="@+id/high_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -120,8 +118,7 @@
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="@+id/low_temp_icon"
                 app:layout_constraintStart_toEndOf="@+id/low_temp_icon"
-                app:layout_constraintTop_toTopOf="@+id/low_temp_icon"
-                tools:text="14°" />
+                app:layout_constraintTop_toTopOf="@+id/low_temp_icon" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/daily_forecast"

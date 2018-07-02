@@ -15,20 +15,24 @@ import android.widget.TextView;
 import com.weather.tonis.weatherapp.DetailedInfoActivity;
 import com.weather.tonis.weatherapp.R;
 import com.weather.tonis.weatherapp.listObjects.CityData;
+import com.weather.tonis.weatherapp.listObjects.IconHashMap;
 
+import org.json.JSONException;
+
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 
 public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.ViewHolder> {
     private final List<CityData> cityList;
     private final Context context;
-    HashMap<String, Integer> weatherIconMap = new HashMap<String, Integer>();
+    private HashMap<String, Integer> weatherIconMap;
 
     public CitiesListAdapter(List<CityData> cityList, Context context) {
         this.cityList = cityList;
         this.context = context;
-        weatherIconMap.put("02d", 1);
-        weatherIconMap.put("04d", 2);
+        IconHashMap iconHashMap = new IconHashMap();
+        weatherIconMap = iconHashMap.getWeatherIconMap();
     }
 
     @NonNull
@@ -45,15 +49,30 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Vi
         final CityData cityData = cityList.get(position);
         String weatherIcon = cityData.getWeatherIcon();
         holder.cityName.setText(cityData.getCityName());
-        holder.cityTemp.setText(cityData.getCityTempAsString() + " " + context.getString(R.string.degrees));
+        holder.cityTemp.setText(cityData.getCityTempAsStringWord() + " " + context.getString(R.string.degrees));
         holder.cityClouds.setText(cityData.getWeatherDescription());
         if (weatherIconMap.containsKey(weatherIcon)){
             holder.weatherIcon.setImageLevel(weatherIconMap.get(cityData.getWeatherIcon()));
         }
         holder.cardView.setOnClickListener(v -> {
             Intent mIntent = new Intent(context, DetailedInfoActivity.class);
+            try {
+                putExtras(mIntent, cityData);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             context.startActivity(mIntent);
         });
+    }
+
+    private void putExtras(Intent mIntent, CityData cityData) throws JSONException {
+        mIntent.putExtra("CITY_NAME", cityData.getCityName());
+        mIntent.putExtra("CURRENT_TEMP", cityData.getCityTempAsString());
+        mIntent.putExtra("MAX_TEMP", cityData.getMaxTempAsString());
+        mIntent.putExtra("MIN_TEMP", cityData.getMinTempAsString());
+        mIntent.putExtra("DESCRIPTION", cityData.getWeatherDescription());
+        mIntent.putExtra("CITY_ID", cityData.getId());
+
     }
 
     @Override
@@ -61,7 +80,7 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Vi
         return cityList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         final TextView cityName;
         final TextView cityTemp;
         final TextView cityClouds;

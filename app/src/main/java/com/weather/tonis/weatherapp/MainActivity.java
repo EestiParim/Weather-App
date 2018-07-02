@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void loadProducts() {
-        String dataURL = "http://www.mocky.io/v2/5b2a21623000004e009cd1b9";
+        String dataURL = "http://api.openweathermap.org/data/2.5/box/city?bbox=22,58,28,60,10&APPID=c25e9063552783d77445456d863d5ea7";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, dataURL,
                 response -> {
                     try {
