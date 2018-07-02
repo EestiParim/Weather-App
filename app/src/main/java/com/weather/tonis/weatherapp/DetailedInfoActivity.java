@@ -68,9 +68,9 @@ public class DetailedInfoActivity extends AppCompatActivity {
     private void setUpRecycleAdapter() {
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView = findViewById(R.id.daily_forecast);
-        recyclerView.setHasFixedSize(true);
+        /*recyclerView.setHasFixedSize(true);*/
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setNestedScrollingEnabled(false);
+/*        recyclerView.setNestedScrollingEnabled(false);*/
         recyclerView.setLayoutManager(linearLayoutManager);
     }
 

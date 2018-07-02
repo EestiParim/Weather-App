@@ -27,7 +27,8 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/nestedConstraint"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
