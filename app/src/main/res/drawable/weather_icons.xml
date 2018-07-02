@@ -5,5 +5,7 @@
     <item android:maxLevel="3" android:drawable="@drawable/weather_fog" />
     <item android:maxLevel="4" android:drawable="@drawable/weather_rainy" />
     <item android:maxLevel="5" android:drawable="@drawable/weather_pouring" />
+    <item android:maxLevel="6" android:drawable="@drawable/weather_snowy" />
+    <item android:maxLevel="7" android:drawable="@drawable/weather_lightning" />
 
 </level-list>

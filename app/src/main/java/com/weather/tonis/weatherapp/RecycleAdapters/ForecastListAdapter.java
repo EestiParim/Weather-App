@@ -25,8 +25,26 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
     public ForecastListAdapter(List<PerDayWeatherInfo> forecastList, Context context) {
         this.perDayWeatherInfoList = forecastList;
         this.context = context;
+        weatherIconMap.put("01d", 0);
+        weatherIconMap.put("01n", 0);
         weatherIconMap.put("02d", 1);
+        weatherIconMap.put("02n", 1);
+        weatherIconMap.put("03d", 2);
+        weatherIconMap.put("03n", 2);
         weatherIconMap.put("04d", 2);
+        weatherIconMap.put("04n", 2);
+        weatherIconMap.put("09d", 5);
+        weatherIconMap.put("09n", 5);
+        weatherIconMap.put("10d", 4);
+        weatherIconMap.put("10n", 4);
+        weatherIconMap.put("11d", 7);
+        weatherIconMap.put("11n", 7);
+        weatherIconMap.put("13d", 6);
+        weatherIconMap.put("13n", 6);
+        weatherIconMap.put("50d", 3);
+        weatherIconMap.put("50n", 3);
+
+
     }
 
     @NonNull
@@ -50,7 +68,7 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
         }
         holder.highTemp.setText(perDayWeatherInfo.getMaxTempAsString() + " °");
         holder.lowTemp.setText(perDayWeatherInfo.getMinTempAsString() + " °");
-        holder.windSpeed.setText(perDayWeatherInfo.getWindSpeedAsString() + " ms");
+        holder.windSpeed.setText(perDayWeatherInfo.getWindSpeedAsString() + " m/s");
         if (weatherIconMap.containsKey(weatherIcon)){
             holder.weatherDescIcon.setImageLevel(weatherIconMap.get(weatherIcon));
         }

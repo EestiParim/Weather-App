@@ -28,6 +28,8 @@ public class DetailedInfoActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<PerDayWeatherInfo> forecastList = new ArrayList<>();
     private RecyclerView.Adapter adapter;
+    private LinearLayoutManager linearLayoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +44,11 @@ public class DetailedInfoActivity extends AppCompatActivity {
         loadProducts();
         recyclerView = findViewById(R.id.daily_forecast);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setAutoMeasureEnabled(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setLayoutManager(linearLayoutManager);
     }
 
     private void loadProducts() {

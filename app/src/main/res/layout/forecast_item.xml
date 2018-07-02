@@ -6,14 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    app:cardBackgroundColor="#afffffff"
-    app:cardElevation="10dp">
+    app:cardBackgroundColor="#af000000"
+    app:cardMaxElevation="0dp"
+    app:cardUseCompatPadding="true"
+    android:orientation="vertical">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/cardview_compat_inset_shadow">
+        android:padding="1dp">
 
         <TextView
             android:id="@+id/date"
@@ -23,6 +25,7 @@
             android:paddingTop="-50dp"
             android:text="Saturday"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -37,6 +40,7 @@
             android:layout_marginTop="7dp"
             android:text="Suured Pilved"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.PopupMenu.Header"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -52,7 +56,7 @@
             app:layout_constraintEnd_toEndOf="@+id/cityClouds"
             app:layout_constraintStart_toStartOf="@+id/cityClouds"
             app:layout_constraintTop_toBottomOf="@+id/cityClouds"
-            app:srcCompat="@drawable/weather_icons" />
+            app:srcCompat="@drawable/weather_icons_light" />
 
         <TextView
             android:id="@+id/high_temp"
@@ -63,6 +67,7 @@
             android:layout_marginTop="8dp"
             android:text="18°"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/low_temp"
@@ -75,9 +80,9 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:textColor="@color/nightBlue"
             android:text="11°"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/nightBlue"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +98,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date"
-            app:srcCompat="@drawable/ic_weather_windy_black_24dp" />
+            app:srcCompat="@drawable/ic_weather_windy_white_24dp" />
 
         <TextView
             android:id="@+id/wind_speed"
@@ -101,6 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"
             android:text="2m/s"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/wind_icon"
             app:layout_constraintStart_toEndOf="@+id/wind_icon"
             app:layout_constraintTop_toTopOf="@+id/wind_icon"
