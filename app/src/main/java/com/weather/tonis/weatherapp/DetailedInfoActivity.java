@@ -3,14 +3,18 @@ package com.weather.tonis.weatherapp;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.widget.ScrollerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.ViewConfiguration;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -26,6 +30,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.view.ViewGroup.FOCUS_AFTER_DESCENDANTS;
 import static com.weather.tonis.weatherapp.R.string.degree_symbol;
 
 public class DetailedInfoActivity extends AppCompatActivity {
@@ -122,7 +127,12 @@ public class DetailedInfoActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                }, error -> Toast.makeText(DetailedInfoActivity.this, error.getMessage() + "PLEASE CONTACT SUPPORT", Toast.LENGTH_LONG).show());
+                }, error -> {
+            if (error instanceof NoConnectionError){
+                Log.e("Volley", error.toString());
+            }
+            Toast.makeText(DetailedInfoActivity.this, error.getMessage() + "PLEASE CONTACT SUPPORT", Toast.LENGTH_LONG).show();
+        });
         Volley.newRequestQueue(this).add(stringRequest);
     }
 }

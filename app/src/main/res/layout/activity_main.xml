@@ -7,42 +7,58 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@mipmap/background"
-        android:scaleType = "centerCrop"
-        android:contentDescription="@string/background_image" />
+        android:contentDescription="@string/background_image"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/background" />
 
-
-    <TextView
-        android:id="@+id/greeting_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/roboto"
-        android:text="Where are we going today?"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="@color/white"
-        android:typeface="sans"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@id/cityList"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Where are we going today?" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/cityList"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:paddingBottom="40dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/greeting_text"
-        tools:listitem="@layout/city_item" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/nested_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants">
+
+            <TextView
+                android:id="@+id/greeting_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/welcome_message"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="@color/white"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Where are we going today?" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/cityList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/greeting_text"
+                tools:listitem="@layout/city_item" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

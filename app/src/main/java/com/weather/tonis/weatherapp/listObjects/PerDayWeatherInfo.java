@@ -37,7 +37,12 @@ public class PerDayWeatherInfo {
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        return dayList[((calendar.get(Calendar.DAY_OF_WEEK)) - 2)] + " " + calendar.get(Calendar.HOUR_OF_DAY);
+        if (calendar.get(Calendar.DAY_OF_WEEK ) >= 2){
+            return dayList[((calendar.get(Calendar.DAY_OF_WEEK)) - 2)] + " " + calendar.get(Calendar.HOUR_OF_DAY);
+        }
+        else{
+            return dayList[0]+ " " + calendar.get(Calendar.HOUR_OF_DAY);
+        }
     }
 
     public String getMaxTempAsString() {
