@@ -15,8 +15,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.weather.tonis.weatherapp.DetailedInfoActivity;
-import com.weather.tonis.weatherapp.RecycleAdapters.ForecastListAdapter;
 import com.weather.tonis.weatherapp.listObjects.CityData;
 import com.weather.tonis.weatherapp.listObjects.PerDayWeatherInfo;
 

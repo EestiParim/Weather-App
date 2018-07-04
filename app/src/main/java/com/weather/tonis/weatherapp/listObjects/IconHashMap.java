@@ -3,7 +3,7 @@ package com.weather.tonis.weatherapp.listObjects;
 import java.util.HashMap;
 
 public class IconHashMap {
-    HashMap<String, Integer> weatherIconMap = new HashMap<>();
+    private final HashMap<String, Integer> weatherIconMap = new HashMap<>();
 
     public IconHashMap(){
         weatherIconMap.put("01d", 0);

@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
             android:paddingTop="-50dp"
-            android:text="Saturday"
+            android:text="@string/filler_day"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/white"
             android:textSize="22sp"
@@ -38,7 +38,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="7dp"
-            android:text="Suured Pilved"
+            android:text="@string/filler_weather_desc"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.PopupMenu.Header"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,8 @@
             app:layout_constraintEnd_toEndOf="@+id/cityClouds"
             app:layout_constraintStart_toStartOf="@+id/cityClouds"
             app:layout_constraintTop_toBottomOf="@+id/cityClouds"
-            app:srcCompat="@drawable/weather_icons_light" />
+            app:srcCompat="@drawable/weather_icons_light"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/high_temp"
@@ -65,7 +66,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="21dp"
             android:layout_marginTop="8dp"
-            android:text="18°"
+            android:text="@string/filler_temp_2"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/white"
             android:textSize="22sp"
@@ -80,7 +81,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:text="11°"
+            android:text="@string/filler_temp_3"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/nightBlue"
             android:textSize="22sp"
@@ -98,14 +99,15 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date"
-            app:srcCompat="@drawable/ic_weather_windy_white_24dp" />
+            app:srcCompat="@drawable/ic_weather_windy_white_24dp"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/wind_speed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"
-            android:text="2m/s"
+            android:text="@string/filler_wind_speed"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/wind_icon"
             app:layout_constraintStart_toEndOf="@+id/wind_icon"

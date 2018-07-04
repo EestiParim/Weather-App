@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@mipmap/background_darker"
-        android:scaleType = "centerCrop" />
+        android:scaleType = "centerCrop"
+        android:contentDescription="TODO" />
 
 
     <ScrollView
@@ -47,8 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:contentDescription="current_temp"
-                android:text="14°"
+                android:contentDescription="@string/current_temp_filler"
+                android:text="@string/filler_temp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@+id/nestedConstraint"
@@ -62,7 +63,8 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/nestedConstraint"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                app:srcCompat="@drawable/ic_weather_fog_white_48dp" />
+                app:srcCompat="@drawable/ic_weather_fog_white_48dp"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/weather_desc"
@@ -70,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="7dp"
-                android:text="Drifting snow"
+                android:text="@string/filler_weather_desc"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toEndOf="@+id/weather_icon"
@@ -84,7 +86,8 @@
                 app:layout_constraintBottom_toBottomOf="@+id/high_temp"
                 app:layout_constraintStart_toEndOf="@+id/high_temp"
                 app:layout_constraintTop_toTopOf="@+id/high_temp"
-                app:srcCompat="@drawable/ic_format_vertical_align_bottom_white_24dp" />
+                app:srcCompat="@drawable/ic_format_vertical_align_bottom_white_24dp"
+                android:contentDescription="TODO" />
 
             <ImageView
                 android:id="@+id/max_temp_icon"
@@ -94,14 +97,15 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/nestedConstraint"
                 app:layout_constraintTop_toBottomOf="@+id/weather_icon"
-                app:srcCompat="@drawable/ic_format_vertical_align_top_white_24dp" />
+                app:srcCompat="@drawable/ic_format_vertical_align_top_white_24dp"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/high_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="28°"
+                android:text="@string/filler_temp_2"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="@+id/max_temp_icon"
@@ -114,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="8°"
+                android:text="@string/filler_temp_3"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="@+id/low_temp_icon"

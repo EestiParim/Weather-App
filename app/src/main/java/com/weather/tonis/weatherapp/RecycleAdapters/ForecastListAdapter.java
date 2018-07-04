@@ -14,18 +14,16 @@ import com.weather.tonis.weatherapp.R;
 import com.weather.tonis.weatherapp.listObjects.IconHashMap;
 import com.weather.tonis.weatherapp.listObjects.PerDayWeatherInfo;
 
-import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
 
 public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapter.ViewHolder> {
     private final List<PerDayWeatherInfo> perDayWeatherInfoList;
-    private final Context context;
-    HashMap<String, Integer> weatherIconMap;
+    private final HashMap<String, Integer> weatherIconMap;
 
     public ForecastListAdapter(List<PerDayWeatherInfo> forecastList, Context context) {
         this.perDayWeatherInfoList = forecastList;
-        this.context = context;
+        Context context1 = context;
         IconHashMap iconHashMap = new IconHashMap();
         weatherIconMap = iconHashMap.getWeatherIconMap();
     }

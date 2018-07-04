@@ -4,4 +4,13 @@
     <string name="background_image">background image</string>
     <string name="degree_symbol">°</string>
     <string name="welcome_message">Where are we going today?</string>
+    <string name="current_temp_filler">current_temp</string>
+    <string name="filler_temp">14°</string>
+    <string name="filler_weather_desc">Drifting snow</string>
+    <string name="filler_temp_2">28°</string>
+    <string name="filler_temp_3">8°</string>
+    <string name="filler_city_name">Tallinn</string>
+    <string name="filler_temp_aswords">Seventeen Degrees</string>
+    <string name="filler_day">Saturday</string>
+    <string name="filler_wind_speed">2m/s</string>
 </resources>

@@ -12,39 +12,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
-import com.android.volley.Cache;
-import com.android.volley.NetworkResponse;
-import com.android.volley.ParseError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.weather.tonis.weatherapp.RecycleAdapters.CitiesListAdapter;
 import com.weather.tonis.weatherapp.listObjects.CityData;
 import com.weather.tonis.weatherapp.network.JsonParser;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private JsonParser jsonParser = new JsonParser();
+    private final JsonParser jsonParser = new JsonParser();
     private List<CityData> cityList = new ArrayList<>();
-    private RecyclerView.Adapter adapter;
     private RecyclerView recyclerView;
     private String[] coordinates;
-    private Context context = this;
-    private Handler handler = new Handler();
+    private final Context context = this;
+    private final Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.cityList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter =  new CitiesListAdapter(cityList, MainActivity.this);
+        RecyclerView.Adapter adapter = new CitiesListAdapter(cityList, MainActivity.this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -102,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         String locationProvider = LocationManager.NETWORK_PROVIDER;
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+        Objects.requireNonNull(locationManager).requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
         Location lastKnownLocation = locationManager.getLastKnownLocation(locationProvider);
         convertToGps(lastKnownLocation);
     }

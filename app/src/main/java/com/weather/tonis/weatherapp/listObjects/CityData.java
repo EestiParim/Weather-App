@@ -92,7 +92,7 @@ public class CityData implements Serializable {
         return weatherIcon;
     }
 
-    public void getWeatherDescription(JSONArray weather) throws JSONException {
+    private void getWeatherDescription(JSONArray weather) throws JSONException {
         JSONObject jsonObject = weather.getJSONObject(0);
         this.weatherDescription = jsonObject.getString("description");
         this.weatherIcon = jsonObject.getString("icon");

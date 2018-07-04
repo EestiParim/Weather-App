@@ -19,14 +19,13 @@ import com.weather.tonis.weatherapp.listObjects.IconHashMap;
 
 import org.json.JSONException;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 
 public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.ViewHolder> {
     private final List<CityData> cityList;
     private final Context context;
-    private HashMap<String, Integer> weatherIconMap;
+    private final HashMap<String, Integer> weatherIconMap;
 
     public CitiesListAdapter(List<CityData> cityList, Context context) {
         this.cityList = cityList;
